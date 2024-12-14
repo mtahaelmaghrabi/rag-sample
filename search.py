@@ -10,7 +10,7 @@ relateddocs = '\n\n'.join(collection.query(query_embeddings=queryembed, n_result
 prompt = f"{query} - Answer that question using the following text as a resource: {relateddocs}"
 noragoutput = ollama.generate(model="llama3.3:70b", prompt=query, stream=False) # mistral
 print(f"Answered without RAG:: {noragoutput['response']}")
-print("---")
+print("########################")
 ragoutput = ollama.generate(model="llama3.3:70b", prompt=prompt, stream=False)
 
 print(f"Answered with RAG:: {ragoutput['response']}")
