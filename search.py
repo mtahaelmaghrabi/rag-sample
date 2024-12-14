@@ -11,6 +11,6 @@ prompt = f"{query} - Answer that question using the following text as a resource
 noragoutput = ollama.generate(model="mistral", prompt=query, stream=False)
 print(f"Answered without RAG: {noragoutput['response']}")
 print("---")
-ragoutput = ollama.generate(model="llama3:latest", prompt=prompt, stream=False)
+ragoutput = ollama.generate(model="llama3.3:70b", prompt=prompt, stream=False)
 
 print(f"Answered with RAG: {ragoutput['response']}")

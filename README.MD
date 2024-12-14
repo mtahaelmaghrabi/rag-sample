@@ -21,7 +21,7 @@ docker run -d --gpus all -v ollama:/root/.ollama -p 11434:11434 --name ollama ol
 
 ## deply ChromaDB
 ```
-docker run -d -p 8000:8000 -v chroma-data:/chromadb/data --name chromadb chromadb/chroma
+docker run -d --gpus all -p 8000:8000 -v chroma-data:/chromadb/data --name chromadb chromadb/chroma
 ```
 
 access the chromadb
