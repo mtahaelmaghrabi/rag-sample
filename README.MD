@@ -47,5 +47,29 @@ and keep the body like:
 }
 
 
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python app.py
 
-python search.py "who is responsable of paying tickets of the non‐Qatari employees, is it the employee or the government entity?"
+
+python3 search.py "In a Government entity, who is responsable of paying tickets of the non‐Qatari employees, is it the employee or the government entity?"
+
+
+
+SQL SEREVER
+
+
+docker volume create sqlserverdata
+docker volume ls
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=P@ssw0rd" \
+-p 1433:1433 --name sqlserver \
+-v sqlserverdata:/var/opt/mssql \
+-d mcr.microsoft.com/mssql/server:2022-latest
+
+## Use SQL from inside the container:
+
+docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd -No -S localhost -U sa -P "P@ssw0rd"
+
+
+
